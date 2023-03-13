@@ -5,11 +5,16 @@ class Person {
      * const per = new Person();
      * per.name
      * 
+     * 属性
      * 使用static开头的属性是静态属性（类属性），通过类去访问
      * Person.age
      * 
      * readonly开头的属性表示一个只读的属性，无法修改;
-     * 当static和readonly限制词都在，static要写到最前面
+     * 当static和readonly限制词都在，static要写到最前面；
+     * 
+     * 方法
+     * 如果方法以static开头则方法就是类方法，通过类去调用；
+     * 没有没有static关键字，通过类实例去调用
     */
 
     // 定义属性
@@ -18,6 +23,7 @@ class Person {
     age: number = 18;
     // 静态属性
     static test: string = '静态属性';
+    //只读属性，无法进行修改
     readonly sex: string = "男";
     // 当static和readonly限制词都在，static要写到最前面
     static readonly test2: string = '静态只读'
@@ -25,6 +31,10 @@ class Person {
     // 定义方法
     sayHello() {
         console.log('Hello,大家好！');
+    }
+    static sayTest(){
+        console.log("test");
+        
     }
 }
 
@@ -48,6 +58,7 @@ console.log('静态属性修改后', Person.test);
 console.log('------------');
 // 3、调用方法
 per.sayHello();
+Person.sayTest();
 
 
 
