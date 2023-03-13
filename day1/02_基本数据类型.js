@@ -19,4 +19,3 @@ var d = false;
 function sum(a, b) {
     return a + b;
 }
-let result = sum(123, 456);
